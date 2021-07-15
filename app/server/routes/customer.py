@@ -40,6 +40,7 @@ async def get_customer_data(id):
         return ResponseModel(customer, "Customer data retrieved successfully")
     return ErrorResponseModel("An error occurred.", 404, "Customer doesn't exist.")
 
+
 @router.put("/{id}")
 async def update_customer_data(id: str, req: UpdateCustomerModel = Body(...)):
     req = {k: v for k, v in req.dict().items() if v is not None}
@@ -54,6 +55,7 @@ async def update_customer_data(id: str, req: UpdateCustomerModel = Body(...)):
         404,
         "There was an error updating the customer data.",
     )
+
 
 @router.delete("/{id}", response_description="Customer data deleted from the database")
 async def delete_customer_data(id: str):

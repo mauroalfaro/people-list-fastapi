@@ -1,7 +1,6 @@
 import motor.motor_asyncio
 from bson.objectid import ObjectId
 
-
 MONGO_DETAILS = "mongodb://localhost:27017"
 
 client = motor.motor_asyncio.AsyncIOMotorClient(MONGO_DETAILS)
@@ -11,6 +10,7 @@ database = client.peoplelist
 customers_collection = database.get_collection("customers_collection")
 employees_collection = database.get_collection("employees_collection")
 stores_collection = database.get_collection("stores_collection")
+
 
 # helpers
 
@@ -26,6 +26,7 @@ def customer_helper(customer) -> dict:
         "email": customer["email"]
     }
 
+
 def employee_helper(employee) -> dict:
     return {
         "id": str(employee["_id"]),
@@ -38,10 +39,11 @@ def employee_helper(employee) -> dict:
         "role": employee["role"]
     }
 
+
 def store_helper(store) -> dict:
     return {
         "id": str(store["_id"]),
-        "storeName": store["name"],
+        "storeName": store["storeName"],
         "address": store["address"]
     }
 
@@ -53,11 +55,13 @@ async def retrieve_customers():
         customers.append(customer_helper(customer))
     return customers
 
+
 async def retrieve_employees():
     employees = []
     async for employee in employees_collection.find():
         employees.append(employee_helper(employee))
     return employees
+
 
 async def retrieve_stores():
     stores = []
@@ -72,10 +76,12 @@ async def add_customer(customer_data: dict) -> dict:
     new_customer = await customers_collection.find_one({"_id": customer.inserted_id})
     return customer_helper(new_customer)
 
+
 async def add_employee(employee_data: dict) -> dict:
     employee = await employees_collection.insert_one(employee_data)
     new_employee = await employees_collection.find_one({"_id": employee.inserted_id})
     return employee_helper(new_employee)
+
 
 async def add_store(store_data: dict) -> dict:
     store = await stores_collection.insert_one(store_data)
@@ -89,10 +95,12 @@ async def retrieve_customer(id: str) -> dict:
     if customer:
         return customer_helper(customer)
 
+
 async def retrieve_employee(id: str) -> dict:
     employee = await employees_collection.find_one({"_id": ObjectId(id)})
     if employee:
         return employee_helper(employee)
+
 
 async def retrieve_store(id: str) -> dict:
     store = await stores_collection.find_one({"_id": ObjectId(id)})
@@ -114,6 +122,7 @@ async def update_customer(id: str, data: dict):
             return True
         return False
 
+
 async def update_employee(id: str, data: dict):
     # Return false if an empty request body is sent.
     if len(data) < 1:
@@ -126,6 +135,7 @@ async def update_employee(id: str, data: dict):
         if updated_employee:
             return True
         return False
+
 
 async def update_store(id: str, data: dict):
     # Return false if an empty request body is sent.
@@ -148,11 +158,13 @@ async def delete_customer(id: str):
         await customers_collection.delete_one({"_id": ObjectId(id)})
         return True
 
+
 async def delete_employee(id: str):
     employee = await employees_collection.find_one({"_id": ObjectId(id)})
     if employee:
         await employees_collection.delete_one({"_id": ObjectId(id)})
         return True
+
 
 async def delete_store(id: str):
     store = await stores_collection.find_one({"_id": ObjectId(id)})
