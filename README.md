@@ -34,6 +34,13 @@ MONGO_DETAILS=your_mongodb_url
 
 (.env file is not on the repository for security purposes)
 
+Or just change this line on [database.py](https://github.com/mauroalfaro/people-list-fastapi/blob/main/app/server/database.py) file with your MongoDB host url:
+
+```python
+
+MONGO_DETAILS = config('MONGO_DETAILS')
+```
+
 You can access to the FastAPI UI on the URL http://localhost:8000/docs#/
 
 ## Notes
