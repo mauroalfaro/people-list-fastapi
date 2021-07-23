@@ -2,7 +2,7 @@
 Basic REST Api with CRUD operations made with FastAPI
 
 ## Description
-people-list project developed with Python and FastAPI. Contains CRUD operations impacting a MongoDB database running on the cloud on a Mongo Atlas cluster.
+people-list project developed with Python and FastAPI. Contains CRUD operations impacting a MongoDB database running on the cloud on a MongoDB Atlas cluster.
 
 ## Design
 Basic Python/FatsAPI application with CRUD endpoints for three models: Customers, Employees and Stores.
@@ -28,7 +28,7 @@ Then, after sourcing your venv environment, you can run the app by executing:
 python app/main.py
 ```
 
-You should start your local MongoDB and set the db name to peoplelist. Then creating a .env file with a mongo_details variable and the url to be resolved by Motor:
+You should start your local MongoDB and set the db name to peoplelist, or start your own cluster on MongoDB Atlas. Then creating a .env file with a mongo_details variable and the url to be resolved by Motor:
 
 MONGO_DETAILS=your_mongodb_url
 
@@ -44,7 +44,8 @@ MONGO_DETAILS = config('MONGO_DETAILS')
 You can access to the FastAPI UI on the URL http://localhost:8000/docs#/
 
 ## Notes
-- Refer to [this](https://docs.mongodb.com/manual/installation/) link if you don't know how to install/run MongoDB locally
+- Refer to [this](https://docs.mongodb.com/manual/installation/) link if you don't know how to install/run MongoDB locally.
+- Refer to [this](https://docs.atlas.mongodb.com/getting-started/) link to get started on MongoDB Atlas and start your own cluster.
 - You can swap out virtualenv and Pip for Poetry or Pipenv.
 - If you dont know how to create and source your virtual environment, the commands are the following:
 ```bash
