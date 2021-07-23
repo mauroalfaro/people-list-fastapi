@@ -10,6 +10,8 @@ Includes:
 - Python/FastAPI
 - Uvicorn Server
 - Pydantic Schemas
+- Pydantic validators (Email)
+- MongoDB asynchronous interaction
 - Deployed on the cloud with MongoDB Atlas / Heroku
 - FastAPI UI to test the app
 
@@ -31,3 +33,13 @@ You should start your local MongoDB and set the db name to peoplelist. Then crea
 MONGO_DETAILS=your_mongodb_url
 
 You can access to the FastAPI UI on the URL http://localhost:8000/docs#/
+
+## Notes
+- Refer to [this](https://docs.mongodb.com/manual/installation/) link if you don't know how to install/run MongoDB locally
+- You can swap out virtualenv and Pip for Poetry or Pipenv.
+- If you dont know how to create and source your virtual environment, the commands are the following:
+```bash
+python3.8 -m venv venv
+source venv/bin/activate
+```
+
