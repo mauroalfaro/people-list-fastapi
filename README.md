@@ -16,7 +16,7 @@ Includes:
 - FastAPI UI to test the app
 
 ## Using the app
-The application is deployed on Heroku and is available to test via this link: https://cryptic-shelf-56391.herokuapp.com/docs#
+The application is deployed on Heroku and is available to test via this link: [people-list-fastapi](https://cryptic-shelf-56391.herokuapp.com/docs#)
 
 If you want to test and deploy the app locally, you should clone this repository, create a virtual environment with venv and install the requirements:
 ```bash
@@ -31,6 +31,8 @@ python app/main.py
 You should start your local MongoDB and set the db name to peoplelist. Then creating a .env file with a mongo_details variable and the url to be resolved by Motor:
 
 MONGO_DETAILS=your_mongodb_url
+
+(.env file is not on the repository for security purposes)
 
 You can access to the FastAPI UI on the URL http://localhost:8000/docs#/
 
