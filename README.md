@@ -1,4 +1,6 @@
 # people-list-fastapi
+[![GitHub release (latest by date)](https://img.shields.io/github/v/release/mauroalfaro/people-list-fastapi)](https://github.com/mauroalfaro/people-list-fastapi/releases/tag/v1.0)
+
 Basic REST Api with CRUD operations made with FastAPI
 
 ## Description
