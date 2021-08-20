@@ -12,7 +12,7 @@ Includes:
 - Python/FastAPI
 - Uvicorn Server
 - Pydantic Schemas
-- Pydantic validators (Email)
+- Pydantic validators (for Email field)
 - MongoDB asynchronous interaction
 - Deployed on the cloud with MongoDB Atlas / Heroku
 - FastAPI UI to test the app
