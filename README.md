@@ -49,7 +49,7 @@ You can access to the FastAPI UI on the URL http://localhost:8000/docs#/
 - Refer to [this](https://docs.mongodb.com/manual/installation/) link if you don't know how to install/run MongoDB locally.
 - Refer to [this](https://docs.atlas.mongodb.com/getting-started/) link to get started on MongoDB Atlas and start your own cluster.
 - You can swap out virtualenv and Pip for Poetry or Pipenv.
-- If you dont know how to create and source your virtual environment, the commands are the following:
+- If you dont know how to create and source your virtual environment with venv, the commands are the following:
 ```bash
 python3.8 -m venv venv
 source venv/bin/activate
