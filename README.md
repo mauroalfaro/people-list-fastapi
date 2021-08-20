@@ -7,7 +7,7 @@ Basic REST Api with CRUD operations made with FastAPI
 people-list project developed with Python and FastAPI. Contains CRUD operations impacting a MongoDB database running on the cloud on a MongoDB Atlas cluster.
 
 ## Design
-Basic Python/FatsAPI application with CRUD endpoints for three models: Customers, Employees and Stores.
+Basic Python/FastAPI application with CRUD endpoints for three models: Customers, Employees and Stores.
 Includes:
 - Python/FastAPI
 - Uvicorn Server
